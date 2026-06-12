@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "D:/New One/wordgame/WordWar/server/build_win/_deps/asio-subbuild/CMakeFiles/asio-populate"
+		},
+		{
+			"file" : "D:/New One/wordgame/WordWar/server/build_win/_deps/asio-subbuild/CMakeFiles/76c69204916b260694fd5077636fa070/asio-populate.rule"
+		},
+		{
+			"file" : "D:/New One/wordgame/WordWar/server/build_win/_deps/asio-subbuild/CMakeFiles/1f27ba097aa6c1ee85a329fb4e3b0674/asio-populate-complete.rule"
+		},
+		{
+			"file" : "D:/New One/wordgame/WordWar/server/build_win/_deps/asio-subbuild/CMakeFiles/ccea0a6c78782009e90f20ed1d80dd3a/asio-populate-build.rule"
+		},
+		{
+			"file" : "D:/New One/wordgame/WordWar/server/build_win/_deps/asio-subbuild/CMakeFiles/ccea0a6c78782009e90f20ed1d80dd3a/asio-populate-configure.rule"
+		},
+		{
+			"file" : "D:/New One/wordgame/WordWar/server/build_win/_deps/asio-subbuild/CMakeFiles/ccea0a6c78782009e90f20ed1d80dd3a/asio-populate-download.rule"
+		},
+		{
+			"file" : "D:/New One/wordgame/WordWar/server/build_win/_deps/asio-subbuild/CMakeFiles/ccea0a6c78782009e90f20ed1d80dd3a/asio-populate-install.rule"
+		},
+		{
+			"file" : "D:/New One/wordgame/WordWar/server/build_win/_deps/asio-subbuild/CMakeFiles/ccea0a6c78782009e90f20ed1d80dd3a/asio-populate-mkdir.rule"
+		},
+		{
+			"file" : "D:/New One/wordgame/WordWar/server/build_win/_deps/asio-subbuild/CMakeFiles/ccea0a6c78782009e90f20ed1d80dd3a/asio-populate-patch.rule"
+		},
+		{
+			"file" : "D:/New One/wordgame/WordWar/server/build_win/_deps/asio-subbuild/CMakeFiles/ccea0a6c78782009e90f20ed1d80dd3a/asio-populate-test.rule"
+		},
+		{
+			"file" : "D:/New One/wordgame/WordWar/server/build_win/_deps/asio-subbuild/CMakeFiles/ccea0a6c78782009e90f20ed1d80dd3a/asio-populate-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"asio-populate"
+		],
+		"name" : "asio-populate"
+	}
+}

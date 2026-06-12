@@ -1,0 +1,14 @@
+# Target labels
+ nlohmann_json-populate
+# Source files and their labels
+D:/New One/wordgame/WordWar/server/build_win/_deps/nlohmann_json-subbuild/CMakeFiles/nlohmann_json-populate
+D:/New One/wordgame/WordWar/server/build_win/_deps/nlohmann_json-subbuild/CMakeFiles/73d2317305c998b87ac2a53a4a9fd503/nlohmann_json-populate.rule
+D:/New One/wordgame/WordWar/server/build_win/_deps/nlohmann_json-subbuild/CMakeFiles/7305d9450795c220707f3e647178e921/nlohmann_json-populate-complete.rule
+D:/New One/wordgame/WordWar/server/build_win/_deps/nlohmann_json-subbuild/CMakeFiles/ed3a82a3e322e4806c016d04dfb69636/nlohmann_json-populate-build.rule
+D:/New One/wordgame/WordWar/server/build_win/_deps/nlohmann_json-subbuild/CMakeFiles/ed3a82a3e322e4806c016d04dfb69636/nlohmann_json-populate-configure.rule
+D:/New One/wordgame/WordWar/server/build_win/_deps/nlohmann_json-subbuild/CMakeFiles/ed3a82a3e322e4806c016d04dfb69636/nlohmann_json-populate-download.rule
+D:/New One/wordgame/WordWar/server/build_win/_deps/nlohmann_json-subbuild/CMakeFiles/ed3a82a3e322e4806c016d04dfb69636/nlohmann_json-populate-install.rule
+D:/New One/wordgame/WordWar/server/build_win/_deps/nlohmann_json-subbuild/CMakeFiles/ed3a82a3e322e4806c016d04dfb69636/nlohmann_json-populate-mkdir.rule
+D:/New One/wordgame/WordWar/server/build_win/_deps/nlohmann_json-subbuild/CMakeFiles/ed3a82a3e322e4806c016d04dfb69636/nlohmann_json-populate-patch.rule
+D:/New One/wordgame/WordWar/server/build_win/_deps/nlohmann_json-subbuild/CMakeFiles/ed3a82a3e322e4806c016d04dfb69636/nlohmann_json-populate-test.rule
+D:/New One/wordgame/WordWar/server/build_win/_deps/nlohmann_json-subbuild/CMakeFiles/ed3a82a3e322e4806c016d04dfb69636/nlohmann_json-populate-update.rule

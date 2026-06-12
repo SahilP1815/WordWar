@@ -1,0 +1,150 @@
+^D:\NEW ONE\WORDGAME\WORDWAR\SERVER\BUILD_WIN\_DEPS\ASIO-SUBBUILD\CMAKEFILES\CCEA0A6C78782009E90F20ED1D80DD3A\ASIO-POPULATE-MKDIR.RULE
+setlocal
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -Dcfgdir=/Debug -P "D:/New One/wordgame/WordWar/server/build_win/_deps/asio-subbuild/asio-populate-prefix/tmp/asio-populate-mkdirs.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch "D:/New One/wordgame/WordWar/server/build_win/_deps/asio-subbuild/asio-populate-prefix/src/asio-populate-stamp/Debug/asio-populate-mkdir"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\NEW ONE\WORDGAME\WORDWAR\SERVER\BUILD_WIN\_DEPS\ASIO-SUBBUILD\CMAKEFILES\CCEA0A6C78782009E90F20ED1D80DD3A\ASIO-POPULATE-DOWNLOAD.RULE
+setlocal
+cd "D:\New One\wordgame\WordWar\server\build_win\_deps"
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -P "D:/New One/wordgame/WordWar/server/build_win/_deps/asio-subbuild/asio-populate-prefix/tmp/asio-populate-gitclone.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch "D:/New One/wordgame/WordWar/server/build_win/_deps/asio-subbuild/asio-populate-prefix/src/asio-populate-stamp/Debug/asio-populate-download"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\NEW ONE\WORDGAME\WORDWAR\SERVER\BUILD_WIN\_DEPS\ASIO-SUBBUILD\CMAKEFILES\CCEA0A6C78782009E90F20ED1D80DD3A\ASIO-POPULATE-UPDATE.RULE
+setlocal
+cd "D:\New One\wordgame\WordWar\server\build_win\_deps\asio-src"
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -Dcan_fetch=YES -P "D:/New One/wordgame/WordWar/server/build_win/_deps/asio-subbuild/asio-populate-prefix/tmp/asio-populate-gitupdate.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\NEW ONE\WORDGAME\WORDWAR\SERVER\BUILD_WIN\_DEPS\ASIO-SUBBUILD\CMAKEFILES\CCEA0A6C78782009E90F20ED1D80DD3A\ASIO-POPULATE-PATCH.RULE
+setlocal
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch "D:/New One/wordgame/WordWar/server/build_win/_deps/asio-subbuild/asio-populate-prefix/src/asio-populate-stamp/Debug/asio-populate-patch"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\NEW ONE\WORDGAME\WORDWAR\SERVER\BUILD_WIN\_DEPS\ASIO-SUBBUILD\CMAKEFILES\CCEA0A6C78782009E90F20ED1D80DD3A\ASIO-POPULATE-CONFIGURE.RULE
+setlocal
+cd "D:\New One\wordgame\WordWar\server\build_win\_deps\asio-build"
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch "D:/New One/wordgame/WordWar/server/build_win/_deps/asio-subbuild/asio-populate-prefix/src/asio-populate-stamp/Debug/asio-populate-configure"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\NEW ONE\WORDGAME\WORDWAR\SERVER\BUILD_WIN\_DEPS\ASIO-SUBBUILD\CMAKEFILES\CCEA0A6C78782009E90F20ED1D80DD3A\ASIO-POPULATE-BUILD.RULE
+setlocal
+cd "D:\New One\wordgame\WordWar\server\build_win\_deps\asio-build"
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch "D:/New One/wordgame/WordWar/server/build_win/_deps/asio-subbuild/asio-populate-prefix/src/asio-populate-stamp/Debug/asio-populate-build"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\NEW ONE\WORDGAME\WORDWAR\SERVER\BUILD_WIN\_DEPS\ASIO-SUBBUILD\CMAKEFILES\CCEA0A6C78782009E90F20ED1D80DD3A\ASIO-POPULATE-INSTALL.RULE
+setlocal
+cd "D:\New One\wordgame\WordWar\server\build_win\_deps\asio-build"
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch "D:/New One/wordgame/WordWar/server/build_win/_deps/asio-subbuild/asio-populate-prefix/src/asio-populate-stamp/Debug/asio-populate-install"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\NEW ONE\WORDGAME\WORDWAR\SERVER\BUILD_WIN\_DEPS\ASIO-SUBBUILD\CMAKEFILES\CCEA0A6C78782009E90F20ED1D80DD3A\ASIO-POPULATE-TEST.RULE
+setlocal
+cd "D:\New One\wordgame\WordWar\server\build_win\_deps\asio-build"
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch "D:/New One/wordgame/WordWar/server/build_win/_deps/asio-subbuild/asio-populate-prefix/src/asio-populate-stamp/Debug/asio-populate-test"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\NEW ONE\WORDGAME\WORDWAR\SERVER\BUILD_WIN\_DEPS\ASIO-SUBBUILD\CMAKEFILES\1F27BA097AA6C1EE85A329FB4E3B0674\ASIO-POPULATE-COMPLETE.RULE
+setlocal
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E make_directory "D:/New One/wordgame/WordWar/server/build_win/_deps/asio-subbuild/CMakeFiles/Debug"
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch "D:/New One/wordgame/WordWar/server/build_win/_deps/asio-subbuild/CMakeFiles/Debug/asio-populate-complete"
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch "D:/New One/wordgame/WordWar/server/build_win/_deps/asio-subbuild/asio-populate-prefix/src/asio-populate-stamp/Debug/asio-populate-done"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\NEW ONE\WORDGAME\WORDWAR\SERVER\BUILD_WIN\_DEPS\ASIO-SUBBUILD\CMAKEFILES\76C69204916B260694FD5077636FA070\ASIO-POPULATE.RULE
+setlocal
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\NEW ONE\WORDGAME\WORDWAR\SERVER\BUILD_WIN\_DEPS\ASIO-SUBBUILD\CMAKELISTS.TXT
+setlocal
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" "-SD:/New One/wordgame/WordWar/server/build_win/_deps/asio-subbuild" "-BD:/New One/wordgame/WordWar/server/build_win/_deps/asio-subbuild" --check-stamp-file "D:/New One/wordgame/WordWar/server/build_win/_deps/asio-subbuild/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

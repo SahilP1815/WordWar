@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="D:\New One\wordgame\WordWar\server\build_win\_deps\nlohmann_json-subbuild\CMakeFiles\ed3a82a3e322e4806c016d04dfb69636\nlohmann_json-populate-mkdir.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\New One\wordgame\WordWar\server\build_win\_deps\nlohmann_json-subbuild\CMakeFiles\ed3a82a3e322e4806c016d04dfb69636\nlohmann_json-populate-download.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\New One\wordgame\WordWar\server\build_win\_deps\nlohmann_json-subbuild\CMakeFiles\ed3a82a3e322e4806c016d04dfb69636\nlohmann_json-populate-update.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\New One\wordgame\WordWar\server\build_win\_deps\nlohmann_json-subbuild\CMakeFiles\ed3a82a3e322e4806c016d04dfb69636\nlohmann_json-populate-patch.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\New One\wordgame\WordWar\server\build_win\_deps\nlohmann_json-subbuild\CMakeFiles\ed3a82a3e322e4806c016d04dfb69636\nlohmann_json-populate-configure.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\New One\wordgame\WordWar\server\build_win\_deps\nlohmann_json-subbuild\CMakeFiles\ed3a82a3e322e4806c016d04dfb69636\nlohmann_json-populate-build.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\New One\wordgame\WordWar\server\build_win\_deps\nlohmann_json-subbuild\CMakeFiles\ed3a82a3e322e4806c016d04dfb69636\nlohmann_json-populate-install.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\New One\wordgame\WordWar\server\build_win\_deps\nlohmann_json-subbuild\CMakeFiles\ed3a82a3e322e4806c016d04dfb69636\nlohmann_json-populate-test.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\New One\wordgame\WordWar\server\build_win\_deps\nlohmann_json-subbuild\CMakeFiles\7305d9450795c220707f3e647178e921\nlohmann_json-populate-complete.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\New One\wordgame\WordWar\server\build_win\_deps\nlohmann_json-subbuild\CMakeFiles\73d2317305c998b87ac2a53a4a9fd503\nlohmann_json-populate.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\New One\wordgame\WordWar\server\build_win\_deps\nlohmann_json-subbuild\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="D:\New One\wordgame\WordWar\server\build_win\_deps\nlohmann_json-subbuild\CMakeFiles\nlohmann_json-populate" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{16E4F0BF-C72D-3BFD-910B-B476B2CF4108}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "D:/New One/wordgame/WordWar/server/build_win/_deps/crow-subbuild/CMakeFiles/crow-populate"
+		},
+		{
+			"file" : "D:/New One/wordgame/WordWar/server/build_win/_deps/crow-subbuild/CMakeFiles/c4d2c4ba359b3935a0ba5f7442339521/crow-populate.rule"
+		},
+		{
+			"file" : "D:/New One/wordgame/WordWar/server/build_win/_deps/crow-subbuild/CMakeFiles/d659b4300514867808c151c130913590/crow-populate-complete.rule"
+		},
+		{
+			"file" : "D:/New One/wordgame/WordWar/server/build_win/_deps/crow-subbuild/CMakeFiles/2f1cab6fa10bf4f1056ef21877e3b54e/crow-populate-build.rule"
+		},
+		{
+			"file" : "D:/New One/wordgame/WordWar/server/build_win/_deps/crow-subbuild/CMakeFiles/2f1cab6fa10bf4f1056ef21877e3b54e/crow-populate-configure.rule"
+		},
+		{
+			"file" : "D:/New One/wordgame/WordWar/server/build_win/_deps/crow-subbuild/CMakeFiles/2f1cab6fa10bf4f1056ef21877e3b54e/crow-populate-download.rule"
+		},
+		{
+			"file" : "D:/New One/wordgame/WordWar/server/build_win/_deps/crow-subbuild/CMakeFiles/2f1cab6fa10bf4f1056ef21877e3b54e/crow-populate-install.rule"
+		},
+		{
+			"file" : "D:/New One/wordgame/WordWar/server/build_win/_deps/crow-subbuild/CMakeFiles/2f1cab6fa10bf4f1056ef21877e3b54e/crow-populate-mkdir.rule"
+		},
+		{
+			"file" : "D:/New One/wordgame/WordWar/server/build_win/_deps/crow-subbuild/CMakeFiles/2f1cab6fa10bf4f1056ef21877e3b54e/crow-populate-patch.rule"
+		},
+		{
+			"file" : "D:/New One/wordgame/WordWar/server/build_win/_deps/crow-subbuild/CMakeFiles/2f1cab6fa10bf4f1056ef21877e3b54e/crow-populate-test.rule"
+		},
+		{
+			"file" : "D:/New One/wordgame/WordWar/server/build_win/_deps/crow-subbuild/CMakeFiles/2f1cab6fa10bf4f1056ef21877e3b54e/crow-populate-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"crow-populate"
+		],
+		"name" : "crow-populate"
+	}
+}

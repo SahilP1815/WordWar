@@ -1,0 +1,12 @@
+D:/New One/wordgame/WordWar/server/build_win/CMakeFiles/think-and-type-server.dir
+D:/New One/wordgame/WordWar/server/build_win/CMakeFiles/PACKAGE.dir
+D:/New One/wordgame/WordWar/server/build_win/CMakeFiles/INSTALL.dir
+D:/New One/wordgame/WordWar/server/build_win/CMakeFiles/ALL_BUILD.dir
+D:/New One/wordgame/WordWar/server/build_win/CMakeFiles/ZERO_CHECK.dir
+D:/New One/wordgame/WordWar/server/build_win/_deps/nlohmann_json-build/CMakeFiles/PACKAGE.dir
+D:/New One/wordgame/WordWar/server/build_win/_deps/nlohmann_json-build/CMakeFiles/INSTALL.dir
+D:/New One/wordgame/WordWar/server/build_win/_deps/nlohmann_json-build/CMakeFiles/ALL_BUILD.dir
+D:/New One/wordgame/WordWar/server/build_win/_deps/crow-build/CMakeFiles/uninstall.dir
+D:/New One/wordgame/WordWar/server/build_win/_deps/crow-build/CMakeFiles/PACKAGE.dir
+D:/New One/wordgame/WordWar/server/build_win/_deps/crow-build/CMakeFiles/INSTALL.dir
+D:/New One/wordgame/WordWar/server/build_win/_deps/crow-build/CMakeFiles/ALL_BUILD.dir

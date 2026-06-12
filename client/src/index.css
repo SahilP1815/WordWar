@@ -1,0 +1,344 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #ffffff; /* Clean white canvas */
+    color: #000000;
+    font-family: 'Fredoka', 'Inter', sans-serif;
+  }
+}
+
+/* Halftone Polka Dot Overlay */
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: radial-gradient(#000000 1.5px, transparent 1.5px);
+  background-size: 24px 24px;
+  opacity: 0.1;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* ──────────────────────────────────────────
+   Gaming & Retro Visual Styles
+   ────────────────────────────────────────── */
+
+/* Scrolling grid background with 3D perspective */
+.retro-grid {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Remove old grid */
+.retro-grid::before {
+  display: none;
+}
+
+/* Remove Glowing Orbs */
+.glowing-orbs {
+  display: none;
+}
+
+/* Neon Glows */
+.text-glow-indigo {
+  text-shadow: 0 0 10px rgba(99, 102, 241, 0.6), 0 0 20px rgba(99, 102, 241, 0.4);
+}
+.text-glow-violet {
+  text-shadow: 0 0 10px rgba(139, 92, 246, 0.6), 0 0 20px rgba(139, 92, 246, 0.4);
+}
+.text-glow-rose {
+  text-shadow: 0 0 10px rgba(244, 63, 94, 0.6), 0 0 20px rgba(244, 63, 94, 0.4);
+}
+
+.btn-gaming {
+  position: relative;
+  transition: all 0.1s ease-in-out;
+  border: 4px solid #000000 !important;
+  background: #ffe800 !important; /* Comic Yellow */
+  color: #000000 !important;
+  box-shadow: 6px 6px 0px #000000 !important;
+  border-radius: 8px !important;
+  text-transform: uppercase;
+  font-weight: 900 !important;
+  letter-spacing: 1px;
+}
+.btn-gaming:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 8px 8px 0px #000000 !important;
+  background: #ff3b30 !important; /* Comic Red */
+  color: #ffffff !important;
+}
+.btn-gaming:active {
+  transform: translate(6px, 6px);
+  box-shadow: 0px 0px 0px #000000 !important;
+}
+
+.btn-gaming-secondary, .btn-gaming-danger, .btn-gaming-success {
+  position: relative;
+  transition: all 0.1s ease-in-out;
+  border: 4px solid #000000 !important;
+  background: #ffffff !important;
+  color: #000000 !important;
+  box-shadow: 4px 4px 0px #000000 !important;
+  border-radius: 8px !important;
+  font-weight: 900 !important;
+}
+.btn-gaming-secondary:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px #000000 !important;
+  background: #00c3ff !important; /* Comic Cyan */
+}
+.btn-gaming-danger:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px #000000 !important;
+  background: #ff3b30 !important;
+  color: white !important;
+}
+.btn-gaming-success:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px #000000 !important;
+  background: #00ff66 !important;
+}
+.btn-gaming-secondary:active, .btn-gaming-danger:active, .btn-gaming-success:active {
+  transform: translate(4px, 4px);
+  box-shadow: 0px 0px 0px #000000 !important;
+}
+
+.btn-gaming-success {
+  position: relative;
+  transition: all 0.12s cubic-bezier(0.25, 0.8, 0.25, 1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 
+    0 6px 0 #047857, 
+    0 12px 24px rgba(16, 185, 129, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+.btn-gaming-success:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 8px 0 #047857, 
+    0 16px 28px rgba(16, 185, 129, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+.btn-gaming-success:active {
+  transform: translateY(6px);
+  box-shadow: 
+    0 0px 0 #047857, 
+    0 4px 10px rgba(16, 185, 129, 0.15),
+    inset 0 1px 0 transparent;
+}
+
+/* Comic Pop Cards (replaces glass) */
+.glass {
+  background: #ffffff !important;
+  border: 4px solid #000000 !important;
+  border-radius: 12px !important;
+  box-shadow: 8px 8px 0px #000000 !important;
+  backdrop-filter: none !important;
+  color: #000000 !important;
+}
+
+.glass-interactive {
+  background: #ffffff !important;
+  border: 4px solid #000000 !important;
+  border-radius: 12px !important;
+  box-shadow: 8px 8px 0px #000000 !important;
+  transition: all 0.15s ease-in-out;
+  color: #000000 !important;
+}
+
+.glass-interactive:hover {
+  background: #fff8d6 !important; /* Slight yellow tint */
+  transform: translate(-4px, -4px);
+  box-shadow: 12px 12px 0px #000000 !important;
+}
+
+/* Override all tailwind slate colors to pure black for the comic style */
+h1, h2, h3, h4, p, span, label, div {
+  text-shadow: none;
+}
+.text-slate-100, .text-slate-200, .text-slate-300, .text-slate-400, .text-slate-500, .text-slate-600 {
+  color: #000000 !important;
+}
+.bg-slate-900, .bg-slate-950, .bg-slate-800 {
+  background-color: transparent !important;
+}
+.border-slate-800, .border-slate-700 {
+  border-color: #000000 !important;
+}
+input, select {
+  border: 3px solid #000000 !important;
+  box-shadow: inset 4px 4px 0px rgba(0,0,0,0.05) !important;
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  border-radius: 8px !important;
+}
+input:focus, select:focus {
+  outline: none !important;
+  box-shadow: inset 0px 0px 0px rgba(0,0,0,0), 0px 0px 0px 4px #ffe800 !important;
+  border-color: #000000 !important;
+}
+
+/* Comic Logo Typography */
+.font-logo {
+  font-family: 'Russo One', sans-serif !important;
+  -webkit-text-stroke: 2px #000000;
+  color: #000000 !important;
+  text-shadow: 6px 6px 0px #ffe800 !important;
+  background: none !important;
+  -webkit-text-fill-color: #000000 !important;
+  letter-spacing: 2px;
+}
+
+/* Premium custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.3);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(99, 102, 241, 0.3);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(99, 102, 241, 0.6);
+}
+
+/* ──────────────────────────────────────────
+   Light Mode Overrides & Variables
+   ────────────────────────────────────────── */
+
+body.light-mode {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+}
+
+body.light-mode .bg-slate-950 {
+  background-color: #f8fafc !important;
+}
+
+body.light-mode .text-slate-100 {
+  color: #0f172a !important;
+}
+
+body.light-mode .text-slate-200 {
+  color: #1e293b !important;
+}
+
+body.light-mode .text-slate-300 {
+  color: #334155 !important;
+}
+
+body.light-mode .text-slate-400 {
+  color: #475569 !important;
+}
+
+body.light-mode .text-slate-500 {
+  color: #64748b !important;
+}
+
+body.light-mode .text-slate-600 {
+  color: #94a3b8 !important;
+}
+
+body.light-mode .border-slate-800,
+body.light-mode .border-slate-800\/60,
+body.light-mode .border-slate-800\/80,
+body.light-mode .border-slate-700\/50 {
+  border-color: #e2e8f0 !important;
+}
+
+body.light-mode .bg-slate-900\/40,
+body.light-mode .bg-slate-900\/80,
+body.light-mode .bg-slate-900\/30,
+body.light-mode .bg-slate-900\/60,
+body.light-mode .bg-slate-900 {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+}
+
+body.light-mode .bg-slate-950\/40 {
+  background-color: #f1f5f9 !important;
+}
+
+body.light-mode .bg-slate-800 {
+  background-color: #e2e8f0 !important;
+  color: #334155 !important;
+}
+
+body.light-mode .glass {
+  background: rgba(255, 255, 255, 0.85) !important;
+  border-color: rgba(15, 23, 42, 0.08) !important;
+  box-shadow: 0 10px 25px -5px rgba(99, 102, 241, 0.05), 0 8px 10px -6px rgba(99, 102, 241, 0.05) !important;
+}
+
+body.light-mode .glass-interactive {
+  background: rgba(255, 255, 255, 0.85) !important;
+  border-color: rgba(15, 23, 42, 0.08) !important;
+}
+
+body.light-mode .glass-interactive:hover {
+  background: rgba(255, 255, 255, 0.95) !important;
+  border-color: rgba(99, 102, 241, 0.4) !important;
+  box-shadow: 0 12px 30px rgba(99, 102, 241, 0.1) !important;
+}
+
+body.light-mode input,
+body.light-mode select,
+body.light-mode textarea {
+  background-color: #ffffff !important;
+  border-color: #cbd5e1 !important;
+  color: #0f172a !important;
+}
+
+body.light-mode input::placeholder {
+  color: #94a3b8 !important;
+}
+
+body.light-mode .bg-indigo-900\/20 {
+  background-color: rgba(99, 102, 241, 0.12) !important;
+}
+
+body.light-mode .bg-violet-900\/20 {
+  background-color: rgba(139, 92, 246, 0.12) !important;
+}
+
+body.light-mode .bg-indigo-950\/10 {
+  background-color: rgba(99, 102, 241, 0.06) !important;
+}
+
+body.light-mode .bg-indigo-950\/20 {
+  background-color: rgba(99, 102, 241, 0.08) !important;
+}
+
+body.light-mode .bg-slate-900\/60 {
+  background-color: #f1f5f9 !important;
+  border-color: #e2e8f0 !important;
+  color: #0f172a !important;
+}
+
+body.light-mode .stroke-slate-800 {
+  stroke: #cbd5e1 !important;
+}
+
+body.light-mode .divide-slate-800\/60 > :not([hidden]) ~ :not([hidden]) {
+  border-color: #cbd5e1 !important;
+}
+
+/* WS badge overrides */
+body.light-mode .fixed.top-4.right-4 {
+  background-color: rgba(255, 255, 255, 0.85) !important;
+  border-color: #e2e8f0 !important;
+}
+

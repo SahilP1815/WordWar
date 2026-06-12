@@ -1,0 +1,39 @@
+# Node dependencies
+node_modules/
+dist/
+dist-ssr/
+*.local
+
+# C++ Build & outputs
+server/build/
+*.exe
+*.obj
+*.pdb
+*.ilk
+*.suo
+*.user
+
+# SQLite database files & dynamic data logs
+server/data/gamedata_*.csv
+server/data/gamedata_*.tsv
+data/gamedata_*.csv
+data/gamedata_*.tsv
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Databases & dynamic state files
+data/dictionary.db
+*.db
+
+# Credentials & environment configs
+.env
+*.env
+

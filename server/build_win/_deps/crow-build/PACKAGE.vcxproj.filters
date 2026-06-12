@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="D:\New One\wordgame\WordWar\server\build_win\CMakeFiles\f4d510194f774230b1d730d294bd39fc\PACKAGE_force.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{977C2DAC-640B-3A56-9663-7501ADA565A0}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

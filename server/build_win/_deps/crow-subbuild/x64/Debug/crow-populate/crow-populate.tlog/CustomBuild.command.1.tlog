@@ -1,0 +1,150 @@
+^D:\NEW ONE\WORDGAME\WORDWAR\SERVER\BUILD_WIN\_DEPS\CROW-SUBBUILD\CMAKEFILES\2F1CAB6FA10BF4F1056EF21877E3B54E\CROW-POPULATE-MKDIR.RULE
+setlocal
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -Dcfgdir=/Debug -P "D:/New One/wordgame/WordWar/server/build_win/_deps/crow-subbuild/crow-populate-prefix/tmp/crow-populate-mkdirs.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch "D:/New One/wordgame/WordWar/server/build_win/_deps/crow-subbuild/crow-populate-prefix/src/crow-populate-stamp/Debug/crow-populate-mkdir"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\NEW ONE\WORDGAME\WORDWAR\SERVER\BUILD_WIN\_DEPS\CROW-SUBBUILD\CMAKEFILES\2F1CAB6FA10BF4F1056EF21877E3B54E\CROW-POPULATE-DOWNLOAD.RULE
+setlocal
+cd "D:\New One\wordgame\WordWar\server\build_win\_deps"
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -P "D:/New One/wordgame/WordWar/server/build_win/_deps/crow-subbuild/crow-populate-prefix/tmp/crow-populate-gitclone.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch "D:/New One/wordgame/WordWar/server/build_win/_deps/crow-subbuild/crow-populate-prefix/src/crow-populate-stamp/Debug/crow-populate-download"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\NEW ONE\WORDGAME\WORDWAR\SERVER\BUILD_WIN\_DEPS\CROW-SUBBUILD\CMAKEFILES\2F1CAB6FA10BF4F1056EF21877E3B54E\CROW-POPULATE-UPDATE.RULE
+setlocal
+cd "D:\New One\wordgame\WordWar\server\build_win\_deps\crow-src"
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -Dcan_fetch=YES -P "D:/New One/wordgame/WordWar/server/build_win/_deps/crow-subbuild/crow-populate-prefix/tmp/crow-populate-gitupdate.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\NEW ONE\WORDGAME\WORDWAR\SERVER\BUILD_WIN\_DEPS\CROW-SUBBUILD\CMAKEFILES\2F1CAB6FA10BF4F1056EF21877E3B54E\CROW-POPULATE-PATCH.RULE
+setlocal
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch "D:/New One/wordgame/WordWar/server/build_win/_deps/crow-subbuild/crow-populate-prefix/src/crow-populate-stamp/Debug/crow-populate-patch"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\NEW ONE\WORDGAME\WORDWAR\SERVER\BUILD_WIN\_DEPS\CROW-SUBBUILD\CMAKEFILES\2F1CAB6FA10BF4F1056EF21877E3B54E\CROW-POPULATE-CONFIGURE.RULE
+setlocal
+cd "D:\New One\wordgame\WordWar\server\build_win\_deps\crow-build"
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch "D:/New One/wordgame/WordWar/server/build_win/_deps/crow-subbuild/crow-populate-prefix/src/crow-populate-stamp/Debug/crow-populate-configure"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\NEW ONE\WORDGAME\WORDWAR\SERVER\BUILD_WIN\_DEPS\CROW-SUBBUILD\CMAKEFILES\2F1CAB6FA10BF4F1056EF21877E3B54E\CROW-POPULATE-BUILD.RULE
+setlocal
+cd "D:\New One\wordgame\WordWar\server\build_win\_deps\crow-build"
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch "D:/New One/wordgame/WordWar/server/build_win/_deps/crow-subbuild/crow-populate-prefix/src/crow-populate-stamp/Debug/crow-populate-build"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\NEW ONE\WORDGAME\WORDWAR\SERVER\BUILD_WIN\_DEPS\CROW-SUBBUILD\CMAKEFILES\2F1CAB6FA10BF4F1056EF21877E3B54E\CROW-POPULATE-INSTALL.RULE
+setlocal
+cd "D:\New One\wordgame\WordWar\server\build_win\_deps\crow-build"
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch "D:/New One/wordgame/WordWar/server/build_win/_deps/crow-subbuild/crow-populate-prefix/src/crow-populate-stamp/Debug/crow-populate-install"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\NEW ONE\WORDGAME\WORDWAR\SERVER\BUILD_WIN\_DEPS\CROW-SUBBUILD\CMAKEFILES\2F1CAB6FA10BF4F1056EF21877E3B54E\CROW-POPULATE-TEST.RULE
+setlocal
+cd "D:\New One\wordgame\WordWar\server\build_win\_deps\crow-build"
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch "D:/New One/wordgame/WordWar/server/build_win/_deps/crow-subbuild/crow-populate-prefix/src/crow-populate-stamp/Debug/crow-populate-test"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\NEW ONE\WORDGAME\WORDWAR\SERVER\BUILD_WIN\_DEPS\CROW-SUBBUILD\CMAKEFILES\D659B4300514867808C151C130913590\CROW-POPULATE-COMPLETE.RULE
+setlocal
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E make_directory "D:/New One/wordgame/WordWar/server/build_win/_deps/crow-subbuild/CMakeFiles/Debug"
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch "D:/New One/wordgame/WordWar/server/build_win/_deps/crow-subbuild/CMakeFiles/Debug/crow-populate-complete"
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch "D:/New One/wordgame/WordWar/server/build_win/_deps/crow-subbuild/crow-populate-prefix/src/crow-populate-stamp/Debug/crow-populate-done"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\NEW ONE\WORDGAME\WORDWAR\SERVER\BUILD_WIN\_DEPS\CROW-SUBBUILD\CMAKEFILES\C4D2C4BA359B3935A0BA5F7442339521\CROW-POPULATE.RULE
+setlocal
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\NEW ONE\WORDGAME\WORDWAR\SERVER\BUILD_WIN\_DEPS\CROW-SUBBUILD\CMAKELISTS.TXT
+setlocal
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" "-SD:/New One/wordgame/WordWar/server/build_win/_deps/crow-subbuild" "-BD:/New One/wordgame/WordWar/server/build_win/_deps/crow-subbuild" --check-stamp-file "D:/New One/wordgame/WordWar/server/build_win/_deps/crow-subbuild/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

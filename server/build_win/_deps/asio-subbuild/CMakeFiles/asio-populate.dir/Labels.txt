@@ -1,0 +1,14 @@
+# Target labels
+ asio-populate
+# Source files and their labels
+D:/New One/wordgame/WordWar/server/build_win/_deps/asio-subbuild/CMakeFiles/asio-populate
+D:/New One/wordgame/WordWar/server/build_win/_deps/asio-subbuild/CMakeFiles/76c69204916b260694fd5077636fa070/asio-populate.rule
+D:/New One/wordgame/WordWar/server/build_win/_deps/asio-subbuild/CMakeFiles/1f27ba097aa6c1ee85a329fb4e3b0674/asio-populate-complete.rule
+D:/New One/wordgame/WordWar/server/build_win/_deps/asio-subbuild/CMakeFiles/ccea0a6c78782009e90f20ed1d80dd3a/asio-populate-build.rule
+D:/New One/wordgame/WordWar/server/build_win/_deps/asio-subbuild/CMakeFiles/ccea0a6c78782009e90f20ed1d80dd3a/asio-populate-configure.rule
+D:/New One/wordgame/WordWar/server/build_win/_deps/asio-subbuild/CMakeFiles/ccea0a6c78782009e90f20ed1d80dd3a/asio-populate-download.rule
+D:/New One/wordgame/WordWar/server/build_win/_deps/asio-subbuild/CMakeFiles/ccea0a6c78782009e90f20ed1d80dd3a/asio-populate-install.rule
+D:/New One/wordgame/WordWar/server/build_win/_deps/asio-subbuild/CMakeFiles/ccea0a6c78782009e90f20ed1d80dd3a/asio-populate-mkdir.rule
+D:/New One/wordgame/WordWar/server/build_win/_deps/asio-subbuild/CMakeFiles/ccea0a6c78782009e90f20ed1d80dd3a/asio-populate-patch.rule
+D:/New One/wordgame/WordWar/server/build_win/_deps/asio-subbuild/CMakeFiles/ccea0a6c78782009e90f20ed1d80dd3a/asio-populate-test.rule
+D:/New One/wordgame/WordWar/server/build_win/_deps/asio-subbuild/CMakeFiles/ccea0a6c78782009e90f20ed1d80dd3a/asio-populate-update.rule

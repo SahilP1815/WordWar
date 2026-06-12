@@ -1,0 +1,3 @@
+D:/New One/wordgame/WordWar/server/build_win/_deps/crow-subbuild/CMakeFiles/crow-populate.dir
+D:/New One/wordgame/WordWar/server/build_win/_deps/crow-subbuild/CMakeFiles/ALL_BUILD.dir
+D:/New One/wordgame/WordWar/server/build_win/_deps/crow-subbuild/CMakeFiles/ZERO_CHECK.dir

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="D:\New One\wordgame\WordWar\server\build_win\_deps\nlohmann_json-subbuild\CMakeFiles\73d2317305c998b87ac2a53a4a9fd503\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{16E4F0BF-C72D-3BFD-910B-B476B2CF4108}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

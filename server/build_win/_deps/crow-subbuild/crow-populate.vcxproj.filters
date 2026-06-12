@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="D:\New One\wordgame\WordWar\server\build_win\_deps\crow-subbuild\CMakeFiles\2f1cab6fa10bf4f1056ef21877e3b54e\crow-populate-mkdir.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\New One\wordgame\WordWar\server\build_win\_deps\crow-subbuild\CMakeFiles\2f1cab6fa10bf4f1056ef21877e3b54e\crow-populate-download.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\New One\wordgame\WordWar\server\build_win\_deps\crow-subbuild\CMakeFiles\2f1cab6fa10bf4f1056ef21877e3b54e\crow-populate-update.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\New One\wordgame\WordWar\server\build_win\_deps\crow-subbuild\CMakeFiles\2f1cab6fa10bf4f1056ef21877e3b54e\crow-populate-patch.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\New One\wordgame\WordWar\server\build_win\_deps\crow-subbuild\CMakeFiles\2f1cab6fa10bf4f1056ef21877e3b54e\crow-populate-configure.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\New One\wordgame\WordWar\server\build_win\_deps\crow-subbuild\CMakeFiles\2f1cab6fa10bf4f1056ef21877e3b54e\crow-populate-build.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\New One\wordgame\WordWar\server\build_win\_deps\crow-subbuild\CMakeFiles\2f1cab6fa10bf4f1056ef21877e3b54e\crow-populate-install.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\New One\wordgame\WordWar\server\build_win\_deps\crow-subbuild\CMakeFiles\2f1cab6fa10bf4f1056ef21877e3b54e\crow-populate-test.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\New One\wordgame\WordWar\server\build_win\_deps\crow-subbuild\CMakeFiles\d659b4300514867808c151c130913590\crow-populate-complete.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\New One\wordgame\WordWar\server\build_win\_deps\crow-subbuild\CMakeFiles\c4d2c4ba359b3935a0ba5f7442339521\crow-populate.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\New One\wordgame\WordWar\server\build_win\_deps\crow-subbuild\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="D:\New One\wordgame\WordWar\server\build_win\_deps\crow-subbuild\CMakeFiles\crow-populate" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{0F96B181-EA9C-3AB8-B969-B79078D2AD64}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
