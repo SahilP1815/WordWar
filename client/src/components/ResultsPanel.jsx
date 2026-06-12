@@ -139,9 +139,10 @@ export default function ResultsPanel({ answers, scores, myPlayerId, onRaiseChall
 
                   {/* Total Score */}
                   <td className="py-4 px-6 text-center font-bold text-slate-100 text-base">
-                    <span className="bg-slate-900/60 px-3 py-1 rounded-lg border border-slate-800">
-                      {scoreData.total} <span className="text-xs text-slate-400 font-normal">pts</span>
-                    </span>
+                    <div className="inline-flex flex-col items-center bg-slate-900/60 px-3 py-1.5 rounded-lg border border-slate-800">
+                      <span className="text-lg font-black leading-none">{scoreData.total}</span>
+                      <span className="text-[10px] text-slate-400 font-normal uppercase tracking-widest leading-none mt-0.5">pts</span>
+                    </div>
                   </td>
                 </tr>
               );
