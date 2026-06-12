@@ -1,5 +1,13 @@
-# Stage 1: Build the C++ server
-FROM ubuntu:22.04 AS builder
+# Stage 1: Build the React frontend
+FROM node:18 AS frontend-builder
+WORKDIR /app/client
+COPY client/package*.json ./
+RUN npm install
+COPY client/ ./
+RUN npm run build
+
+# Stage 2: Build the C++ server
+FROM ubuntu:22.04 AS backend-builder
 
 # Prevent interactive prompts during apt-get
 ENV DEBIAN_FRONTEND=noninteractive
@@ -36,10 +44,13 @@ RUN apt-get update && apt-get install -y \
 WORKDIR /app
 
 # Copy the compiled binary from the builder stage
-COPY --from=builder /app/server/build/think-and-type-server .
+COPY --from=backend-builder /app/server/build/think-and-type-server .
 
 # Copy the data folder (dictionaries and SQLite DB)
-COPY --from=builder /app/server/data ./data
+COPY --from=backend-builder /app/server/data ./data
+
+# Copy the React frontend into the static directory for Crow to serve
+COPY --from=frontend-builder /app/client/dist ./static
 
 # Render automatically assigns a PORT environment variable.
 # We will tell the container to run our server and pass that port to it.

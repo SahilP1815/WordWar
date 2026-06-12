@@ -948,9 +948,19 @@ int main(int argc, char* argv[]) {
         return crow::response(200, "OK");
     });
 
-    // CORS preflight
-    CROW_ROUTE(app, "/")([]{
-        return crow::response(200, "Think & Type Game Server");
+    // Serve the React Frontend on the root path
+    CROW_ROUTE(app, "/")([](const crow::request& req, crow::response& res){
+        std::ifstream in("static/index.html", std::ios::in | std::ios::binary);
+        if (in) {
+            std::ostringstream contents;
+            contents << in.rdbuf();
+            res.write(contents.str());
+            res.set_header("Content-Type", "text/html");
+        } else {
+            res.code = 404;
+            res.write("Frontend not found! Did you compile the client?");
+        }
+        res.end();
     });
 
     // Load Dictionaries
