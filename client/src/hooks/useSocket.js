@@ -12,9 +12,9 @@ export function useSocket() {
 
     // Use current host, switch protocol
     const proto = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
-    // Use the current host (this will use port 5173 and hit the Vite proxy)
     const host = window.location.host;
-    const wsUrl = `${proto}//${host}/ws`;
+    // For Vercel production, we will set VITE_WS_URL. Otherwise default to local proxy.
+    const wsUrl = import.meta.env.VITE_WS_URL || `${proto}//${host}/ws`;
 
     console.log(`Connecting to WebSocket at ${wsUrl}`);
     const ws = new WebSocket(wsUrl);
