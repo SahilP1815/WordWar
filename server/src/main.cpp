@@ -45,6 +45,8 @@
 #include <functional>
 #include <atomic>
 #include <filesystem>
+#include <fstream>
+#include <sstream>
 
 using json = nlohmann::json;
 
@@ -959,6 +961,30 @@ int main(int argc, char* argv[]) {
         } else {
             res.code = 404;
             res.write("Frontend not found! Did you compile the client?");
+        }
+        res.end();
+    });
+
+    // Serve React static assets (JS, CSS, images, etc.) from /static/
+    CROW_ROUTE(app, "/static/<path>")([](const crow::request& req, crow::response& res, std::string filepath){
+        std::string fullPath = "static/" + filepath;
+        std::ifstream in(fullPath, std::ios::in | std::ios::binary);
+        if (in) {
+            std::ostringstream contents;
+            contents << in.rdbuf();
+            res.write(contents.str());
+
+            // Set correct Content-Type based on file extension
+            if (filepath.ends_with(".js"))   res.set_header("Content-Type", "application/javascript");
+            else if (filepath.ends_with(".css"))  res.set_header("Content-Type", "text/css");
+            else if (filepath.ends_with(".svg"))  res.set_header("Content-Type", "image/svg+xml");
+            else if (filepath.ends_with(".png"))  res.set_header("Content-Type", "image/png");
+            else if (filepath.ends_with(".ico"))  res.set_header("Content-Type", "image/x-icon");
+            else if (filepath.ends_with(".woff2")) res.set_header("Content-Type", "font/woff2");
+            else                                    res.set_header("Content-Type", "application/octet-stream");
+        } else {
+            res.code = 404;
+            res.write("Asset not found: " + filepath);
         }
         res.end();
     });
