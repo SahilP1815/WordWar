@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import ReactDOM from 'react-dom/client';
 import { useSocket } from './hooks/useSocket';
-import { Sun, Moon } from 'lucide-react';
+import { Sun, Moon, BookOpen, X } from 'lucide-react';
 
 // Import Pages
 import Home from './pages/Home';
@@ -19,6 +19,9 @@ function App() {
 
   // Navigation State
   const [phase, setPhase] = useState('HOME'); // HOME, LOBBY, GAME, RESULTS, OVER
+
+  // Rules popover
+  const [showRules, setShowRules] = useState(false);
 
   // Theme State
   const [isDarkMode, setIsDarkMode] = useState(true);
@@ -66,6 +69,8 @@ function App() {
   const [activeChallenges, setActiveChallenges] = useState([]);
   const [scoresLocked, setScoresLocked] = useState(false);
   const [leaderboard, setLeaderboard] = useState([]);
+  // Accumulated per-round data for the full-game Excel export
+  const [roundHistory, setRoundHistory] = useState([]);
 
   // Joining state (set immediately when user clicks Join, cleared on server response)
   const [joiningData, setJoiningData] = useState(null); // { roomCode }
@@ -149,6 +154,16 @@ function App() {
         setAnswers(lastMessage.answers || {});
         setScores(lastMessage.scores || {});
         setChallengeEndsAt(lastMessage.challengeEndsAt);
+        // Accumulate this round into history for the full Excel export
+        setRoundHistory((prev) => [
+          ...prev.filter((r) => r.roundNumber !== roundNumber), // dedupe on re-render
+          {
+            roundNumber,
+            letter,
+            answers: lastMessage.answers || {},
+            scores: lastMessage.scores || {},
+          },
+        ]);
         setPhase('RESULTS');
         break;
 
@@ -293,18 +308,99 @@ function App() {
     setScoresLocked(false);
     setActiveChallenges([]);
     setLeaderboard([]);
+    setRoundHistory([]);
   };
 
   return (
     <>
       {/* Theme Toggle Button Removed for Comic Theme */}
 
-      {/* WS Status Badge */}
-      <div className="fixed top-4 right-4 z-50 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-900/80 border border-slate-800 text-xs font-semibold backdrop-blur-md">
-        <span className={`w-2.5 h-2.5 rounded-full ${connected ? 'bg-emerald-500 animate-pulse' : 'bg-rose-500'}`} />
-        <span className={connected ? 'text-emerald-400' : 'text-rose-400'}>
-          {connected ? 'Server Connected' : 'Server Disconnected'}
-        </span>
+      {/* Top-right corner: WS badge + Rules button (home only) */}
+      <div className="fixed top-4 right-4 z-50 flex items-center gap-2">
+
+        {/* Rules button — only on HOME */}
+        {phase === 'HOME' && (
+          <div className="relative">
+            <button
+              type="button"
+              onClick={() => setShowRules((v) => !v)}
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-indigo-600 hover:bg-indigo-500 border border-indigo-400 text-white text-xs font-bold shadow-md transition-all active:scale-95"
+              title="How to play"
+            >
+              <BookOpen size={13} /> How to Play
+            </button>
+
+            {/* Popover */}
+            {showRules && (
+              <>
+                {/* Backdrop */}
+                <div
+                  className="fixed inset-0 z-[99998]"
+                  onClick={() => setShowRules(false)}
+                />
+                <div className="absolute right-0 top-10 z-[99999] w-80 bg-white border-2 border-indigo-200 rounded-2xl shadow-2xl p-5">
+                  {/* Header */}
+                  <div className="flex items-center justify-between mb-4">
+                    <h3 className="text-sm font-black uppercase tracking-widest text-indigo-600 flex items-center gap-2">
+                      <BookOpen size={14} /> Game Rules
+                    </h3>
+                    <button
+                      type="button"
+                      onClick={() => setShowRules(false)}
+                      className="p-1 rounded-lg hover:bg-slate-100 text-slate-500 hover:text-slate-800 transition-colors"
+                    >
+                      <X size={14} />
+                    </button>
+                  </div>
+
+                  {/* Rules list */}
+                  <ol className="space-y-3">
+                    <li className="flex gap-3">
+                      <span className="flex-shrink-0 w-5 h-5 rounded-full bg-indigo-600 text-white text-[10px] font-black flex items-center justify-center mt-0.5">1</span>
+                      <p className="text-slate-700 text-xs leading-relaxed">
+                        Each round a <span className="text-indigo-600 font-bold">random letter</span> is picked. Fill in all 4 categories — <span className="font-bold text-slate-900">Person Name, Place, Animal, and Object/Thing</span> — with words starting with that letter.
+                      </p>
+                    </li>
+                    <li className="flex gap-3">
+                      <span className="flex-shrink-0 w-5 h-5 rounded-full bg-emerald-600 text-white text-[10px] font-black flex items-center justify-center mt-0.5">2</span>
+                      <p className="text-slate-700 text-xs leading-relaxed">
+                        <span className="text-emerald-600 font-bold">10 pts</span> for a unique answer nobody else wrote · <span className="text-amber-600 font-bold">5 pts</span> for a duplicate · <span className="text-slate-500 font-bold">0 pts</span> for blank or invalid words.
+                      </p>
+                    </li>
+                    <li className="flex gap-3">
+                      <span className="flex-shrink-0 w-5 h-5 rounded-full bg-rose-600 text-white text-[10px] font-black flex items-center justify-center mt-0.5">3</span>
+                      <p className="text-slate-700 text-xs leading-relaxed">
+                        After each round, dispute wrong answers during the <span className="text-rose-600 font-bold">challenge window</span>. The host resolves disputes. The player with the <span className="text-amber-600 font-bold">highest total score</span> at the end wins!
+                      </p>
+                    </li>
+                  </ol>
+
+                  {/* Scoring legend */}
+                  <div className="mt-4 pt-4 border-t border-slate-200 flex items-center justify-around gap-2">
+                    <span className="flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wide text-emerald-700 bg-emerald-50 border border-emerald-300 px-2 py-1 rounded-lg">
+                      <span className="w-2 h-2 rounded-full bg-emerald-500 inline-block" /> Unique = 10
+                    </span>
+                    <span className="flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wide text-amber-700 bg-amber-50 border border-amber-300 px-2 py-1 rounded-lg">
+                      <span className="w-2 h-2 rounded-full bg-amber-500 inline-block" /> Dupe = 5
+                    </span>
+                    <span className="flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wide text-slate-600 bg-slate-100 border border-slate-300 px-2 py-1 rounded-lg">
+                      <span className="w-2 h-2 rounded-full bg-slate-400 inline-block" /> Invalid = 0
+                    </span>
+                  </div>
+                </div>
+              </>
+            )}
+          </div>
+        )}
+
+        {/* WS Status Badge */}
+        <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-900/80 border border-slate-800 text-xs font-semibold backdrop-blur-md">
+          <span className={`w-2.5 h-2.5 rounded-full ${connected ? 'bg-emerald-500 animate-pulse' : 'bg-rose-500'}`} />
+          <span className={connected ? 'text-emerald-400' : 'text-rose-400'}>
+            {connected ? 'Server Connected' : 'Server Disconnected'}
+          </span>
+        </div>
+
       </div>
 
       {phase === 'HOME' && (
@@ -385,6 +481,7 @@ function App() {
           scoresLocked={scoresLocked}
           leaderboard={leaderboard}
           maxRounds={maxRounds}
+          roomId={roomId}
         />
       )}
 
@@ -394,6 +491,8 @@ function App() {
           onGoHome={handleGoHome}
           myPlayerId={playerId}
           isHost={isHost}
+          roomId={roomId}
+          roundHistory={roundHistory}
         />
       )}
     </>

@@ -1,8 +1,9 @@
 import React from 'react';
 import ScoreBoard from '../components/ScoreBoard';
-import { Trophy, RefreshCw, Sparkles, Home } from 'lucide-react';
+import { Trophy, RefreshCw, Sparkles, Home, Download } from 'lucide-react';
+import { downloadFullResults } from '../utils/downloadResults';
 
-export default function Leaderboard({ leaderboard, onGoHome, myPlayerId, isHost }) {
+export default function Leaderboard({ leaderboard, onGoHome, myPlayerId, isHost, roomId, roundHistory = [] }) {
   const winner = leaderboard[0];
 
   const hasPlayedAudioRef = React.useRef(false);
@@ -39,6 +40,16 @@ export default function Leaderboard({ leaderboard, onGoHome, myPlayerId, isHost 
     };
   }, [leaderboard, myPlayerId, isHost]);
 
+  // Stop audio immediately and navigate home
+  const handleGoHome = () => {
+    if (audioRef.current) {
+      audioRef.current.pause();
+      audioRef.current.src = '';
+      audioRef.current = null;
+    }
+    onGoHome();
+  };
+
   return (
     <div className="min-h-screen p-6 md:p-12 relative overflow-hidden flex flex-col items-center justify-center">
 
@@ -74,9 +85,20 @@ export default function Leaderboard({ leaderboard, onGoHome, myPlayerId, isHost 
         <ScoreBoard leaderboard={leaderboard} />
 
         {/* Actions */}
-        <div className="flex justify-center pt-2">
+        <div className="flex flex-wrap justify-center gap-4 pt-2">
+          {isHost && (
+            <button
+              type="button"
+              onClick={() => downloadFullResults(leaderboard, roundHistory, roomId)}
+              className="px-8 py-4 bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 border border-emerald-500/20 hover:border-emerald-500/40 font-bold rounded-xl flex items-center gap-2 transition-all active:scale-95"
+              title="Download full results as Excel (.xlsx)"
+            >
+              <Download size={18} /> Download Full Results
+            </button>
+          )}
           <button
-            onClick={onGoHome}
+            type="button"
+            onClick={handleGoHome}
             className="px-8 py-4 bg-slate-900 hover:bg-slate-800 text-slate-300 font-bold rounded-xl flex items-center gap-2 btn-gaming-secondary"
           >
             <Home size={18} /> Return to Home

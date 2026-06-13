@@ -17,7 +17,8 @@ export default function Results({
   onStartNextRound,
   onStopGame,
   scoresLocked,
-  leaderboard
+  leaderboard,
+  roomId,
 }) {
   const [timeLeft, setTimeLeft] = useState(0);
 
