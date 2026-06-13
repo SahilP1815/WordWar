@@ -24,7 +24,6 @@
  *   { "type": "error",          "message": "..." }
  */
 
-#define CROW_MAIN
 #include <crow.h>
 #include <nlohmann/json.hpp>
 
