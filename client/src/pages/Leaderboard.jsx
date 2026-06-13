@@ -37,20 +37,28 @@ export default function Leaderboard({ leaderboard, onGoHome, myPlayerId, isHost,
 
     // Cleanup: stop audio if user navigates away before it finishes
     return () => {
-      if (audioRef.current) {
-        audioRef.current.pause();
-        audioRef.current.src = '';
-        audioRef.current = null;
+      try {
+        if (audioRef.current) {
+          audioRef.current.pause();
+          audioRef.current.src = '';
+          audioRef.current = null;
+        }
+      } catch (err) {
+        console.warn("Error in audio cleanup:", err);
       }
     };
   }, [leaderboard, myPlayerId, isHost]);
 
   // Stop audio immediately and navigate home
   const handleGoHome = () => {
-    if (audioRef.current) {
-      audioRef.current.pause();
-      audioRef.current.src = '';
-      audioRef.current = null;
+    try {
+      if (audioRef.current) {
+        audioRef.current.pause();
+        audioRef.current.src = '';
+        audioRef.current = null;
+      }
+    } catch (err) {
+      console.warn("Error stopping leaderboard audio:", err);
     }
     onGoHome();
   };
