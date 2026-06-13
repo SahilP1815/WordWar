@@ -949,42 +949,49 @@ int main(int argc, char* argv[]) {
         return crow::response(200, "OK");
     });
 
-    // Serve the React Frontend on the root path
-    CROW_ROUTE(app, "/")([](const crow::request& req, crow::response& res){
-        std::ifstream in("static/index.html", std::ios::in | std::ios::binary);
-        if (in) {
-            std::ostringstream contents;
-            contents << in.rdbuf();
-            res.write(contents.str());
+    // Serve React frontend + static assets via catchall
+    // (avoids Crow v1.3.2 bug where <path> parameter registers the route twice)
+    CROW_CATCHALL_ROUTE(app)([](const crow::request& req, crow::response& res) {
+        std::string url = req.url;
+
+        // Strip query string if present
+        auto qpos = url.find('?');
+        if (qpos != std::string::npos) url = url.substr(0, qpos);
+
+        std::string filepath;
+        if (url.size() >= 8 && url.substr(0, 8) == "/static/") {
+            // /static/assets/foo.js  →  static/assets/foo.js
+            filepath = "static/" + url.substr(8);
+        } else {
+            // Everything else (/, /ws fallback, unknown) → serve SPA entry point
+            filepath = "static/index.html";
+        }
+
+        std::ifstream in(filepath, std::ios::in | std::ios::binary);
+        if (!in) {
+            // Fallback to index.html for SPA client-side routing
+            in.open("static/index.html", std::ios::in | std::ios::binary);
+            if (!in) {
+                res.code = 404;
+                res.write("Not found");
+                res.end();
+                return;
+            }
             res.set_header("Content-Type", "text/html");
         } else {
-            res.code = 404;
-            res.write("Frontend not found! Did you compile the client?");
-        }
-        res.end();
-    });
-
-    // Serve React static assets (JS, CSS, images, etc.) from /static/
-    CROW_ROUTE(app, "/static/<path>")([](const crow::request& req, crow::response& res, std::string filepath){
-        std::string fullPath = "static/" + filepath;
-        std::ifstream in(fullPath, std::ios::in | std::ios::binary);
-        if (in) {
-            std::ostringstream contents;
-            contents << in.rdbuf();
-            res.write(contents.str());
-
-            // Set correct Content-Type based on file extension
-            if (filepath.ends_with(".js"))   res.set_header("Content-Type", "application/javascript");
-            else if (filepath.ends_with(".css"))  res.set_header("Content-Type", "text/css");
-            else if (filepath.ends_with(".svg"))  res.set_header("Content-Type", "image/svg+xml");
-            else if (filepath.ends_with(".png"))  res.set_header("Content-Type", "image/png");
-            else if (filepath.ends_with(".ico"))  res.set_header("Content-Type", "image/x-icon");
+            if      (filepath.ends_with(".js"))    res.set_header("Content-Type", "application/javascript");
+            else if (filepath.ends_with(".css"))   res.set_header("Content-Type", "text/css");
+            else if (filepath.ends_with(".svg"))   res.set_header("Content-Type", "image/svg+xml");
+            else if (filepath.ends_with(".png"))   res.set_header("Content-Type", "image/png");
+            else if (filepath.ends_with(".ico"))   res.set_header("Content-Type", "image/x-icon");
             else if (filepath.ends_with(".woff2")) res.set_header("Content-Type", "font/woff2");
+            else if (filepath.ends_with(".html"))  res.set_header("Content-Type", "text/html");
             else                                    res.set_header("Content-Type", "application/octet-stream");
-        } else {
-            res.code = 404;
-            res.write("Asset not found: " + filepath);
         }
+
+        std::ostringstream contents;
+        contents << in.rdbuf();
+        res.write(contents.str());
         res.end();
     });
 
