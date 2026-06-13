@@ -949,7 +949,22 @@ int main(int argc, char* argv[]) {
         return crow::response(200, "OK");
     });
 
-    // Serve React frontend + static assets via catchall
+    // Serve the React Frontend on the root path
+    CROW_ROUTE(app, "/")([](const crow::request& req, crow::response& res){
+        std::ifstream in("static/index.html", std::ios::in | std::ios::binary);
+        if (in) {
+            std::ostringstream contents;
+            contents << in.rdbuf();
+            res.write(contents.str());
+            res.set_header("Content-Type", "text/html");
+        } else {
+            res.code = 404;
+            res.write("Frontend not found! Did you compile the client?");
+        }
+        res.end();
+    });
+
+    // Serve React static assets + client-side routing fallback
     // (avoids Crow v1.3.2 bug where <path> parameter registers the route twice)
     CROW_CATCHALL_ROUTE(app)([](const crow::request& req, crow::response& res) {
         std::string url = req.url;
@@ -963,13 +978,14 @@ int main(int argc, char* argv[]) {
             // /static/assets/foo.js  →  static/assets/foo.js
             filepath = "static/" + url.substr(8);
         } else {
-            // Everything else (/, /ws fallback, unknown) → serve SPA entry point
+            // Fallback for SPA routing
             filepath = "static/index.html";
         }
 
         std::ifstream in(filepath, std::ios::in | std::ios::binary);
         if (!in) {
-            // Fallback to index.html for SPA client-side routing
+            // Clear stream error state before opening fallback file
+            in.clear();
             in.open("static/index.html", std::ios::in | std::ios::binary);
             if (!in) {
                 res.code = 404;
