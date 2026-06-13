@@ -1,4 +1,4 @@
-# 💥 WORD WAR: The Ultimate Name-Place-Animal-Thing Battle! 💥
+# WORD WAR: The Ultimate Name-Place-Animal-Thing Battle! 
 
 Welcome to **Word War**, the fast-paced, comic-book style multiplayer game where your brain is your greatest weapon! 🧠⚡ 
 
