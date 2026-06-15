@@ -393,15 +393,7 @@ function App() {
           </div>
         )}
 
-        {/* WS Status Badge */}
-        {!connected && (
-          <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-900/80 border border-slate-800 text-xs font-semibold backdrop-blur-md">
-            <span className="w-2.5 h-2.5 rounded-full bg-rose-500" />
-            <span className="text-rose-400">
-              Server Disconnected
-            </span>
-          </div>
-        )}
+
 
       </div>
 
