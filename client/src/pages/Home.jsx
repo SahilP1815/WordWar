@@ -124,69 +124,66 @@ export default function Home({ onCreateRoom, onJoinRoom, error, isDarkMode, setI
             </div>
 
             {!isJoin && (
-              <div className="grid grid-cols-3 gap-3 pt-1">
-                <div>
-                  <label className={`block text-[10px] font-bold uppercase tracking-wider mb-2 transition-colors duration-300 ${
-                    isDarkMode ? 'text-slate-400' : 'text-slate-600'
-                  }`}>
-                    Max Players
-                  </label>
-                  <input
-                    type="number"
-                    min="2"
-                    max="100"
-                    value={playerLimit}
-                    onChange={(e) => setPlayerLimit(e.target.value === '' ? '' : Number(e.target.value))}
-                    placeholder="Custom"
-                    className={`w-full border rounded-xl px-3 py-3 transition-all font-bold focus:outline-none focus:ring-1 focus:ring-indigo-500 text-sm ${
-                      isDarkMode 
-                        ? 'bg-slate-900/50 border-slate-700/50 text-slate-200 focus:border-indigo-500 focus:bg-slate-900' 
-                        : 'bg-slate-100 border-slate-300 text-slate-800 focus:border-indigo-500 focus:bg-white'
-                    }`}
-                  />
-                </div>
-                <div>
-                  <label className={`block text-[10px] font-bold uppercase tracking-wider mb-2 transition-colors duration-300 ${
-                    isDarkMode ? 'text-slate-400' : 'text-slate-600'
-                  }`}>
-                    Total Rounds
-                  </label>
-                  <select
-                    value={maxRounds}
-                    onChange={(e) => setMaxRounds(Number(e.target.value))}
-                    className={`w-full border rounded-xl px-2 py-3 transition-all font-bold focus:outline-none focus:ring-1 focus:ring-indigo-500 text-sm ${
-                      isDarkMode 
-                        ? 'bg-slate-900/50 border-slate-700/50 text-slate-200 focus:border-indigo-500 focus:bg-slate-900' 
-                        : 'bg-slate-100 border-slate-300 text-slate-800 focus:border-indigo-500 focus:bg-white'
-                    }`}
-                  >
-                    <option value={5}>5 Rounds</option>
-                    <option value={8}>8 Rounds</option>
-                    <option value={10}>10 Rounds</option>
-                    <option value={12}>12 Rounds</option>
-                  </select>
-                </div>
-                <div>
-                  <label className={`block text-[10px] font-bold uppercase tracking-wider mb-2 transition-colors duration-300 ${
-                    isDarkMode ? 'text-slate-400' : 'text-slate-600'
-                  }`}>
-                    Round Time
-                  </label>
-                  <select
-                    value={roundDuration}
-                    onChange={(e) => setRoundDuration(Number(e.target.value))}
-                    className={`w-full border rounded-xl px-2 py-3 transition-all font-bold focus:outline-none focus:ring-1 focus:ring-indigo-500 text-sm ${
-                      isDarkMode 
-                        ? 'bg-slate-900/50 border-slate-700/50 text-slate-200 focus:border-indigo-500 focus:bg-slate-900' 
-                        : 'bg-slate-100 border-slate-300 text-slate-800 focus:border-indigo-500 focus:bg-white'
-                    }`}
-                  >
-                    <option value={10}>10s</option>
-                    <option value={20}>20s</option>
-                    <option value={30}>30s</option>
-                    <option value={40}>40s</option>
-                  </select>
-                </div>
+              <div className="grid grid-cols-3 gap-x-3 gap-y-2 pt-1">
+                {/* Labels */}
+                <label className={`block text-[10px] font-bold uppercase tracking-wider transition-colors duration-300 ${
+                  isDarkMode ? 'text-slate-400' : 'text-slate-600'
+                }`}>
+                  Max Players
+                </label>
+                <label className={`block text-[10px] font-bold uppercase tracking-wider transition-colors duration-300 ${
+                  isDarkMode ? 'text-slate-400' : 'text-slate-600'
+                }`}>
+                  Total Rounds
+                </label>
+                <label className={`block text-[10px] font-bold uppercase tracking-wider transition-colors duration-300 ${
+                  isDarkMode ? 'text-slate-400' : 'text-slate-600'
+                }`}>
+                  Round Time
+                </label>
+
+                {/* Inputs */}
+                <input
+                  type="number"
+                  min="2"
+                  max="100"
+                  value={playerLimit}
+                  onChange={(e) => setPlayerLimit(e.target.value === '' ? '' : Number(e.target.value))}
+                  placeholder="Custom"
+                  className={`w-full border rounded-xl px-3 py-3 transition-all font-bold focus:outline-none focus:ring-1 focus:ring-indigo-500 text-sm ${
+                    isDarkMode 
+                      ? 'bg-slate-900/50 border-slate-700/50 text-slate-200 focus:border-indigo-500 focus:bg-slate-900' 
+                      : 'bg-slate-100 border-slate-300 text-slate-800 focus:border-indigo-500 focus:bg-white'
+                  }`}
+                />
+                <select
+                  value={maxRounds}
+                  onChange={(e) => setMaxRounds(Number(e.target.value))}
+                  className={`w-full border rounded-xl px-2 py-3 transition-all font-bold focus:outline-none focus:ring-1 focus:ring-indigo-500 text-sm ${
+                    isDarkMode 
+                      ? 'bg-slate-900/50 border-slate-700/50 text-slate-200 focus:border-indigo-500 focus:bg-slate-900' 
+                      : 'bg-slate-100 border-slate-300 text-slate-800 focus:border-indigo-500 focus:bg-white'
+                  }`}
+                >
+                  <option value={5}>5 Rds</option>
+                  <option value={8}>8 Rds</option>
+                  <option value={10}>10 Rds</option>
+                  <option value={12}>12 Rds</option>
+                </select>
+                <select
+                  value={roundDuration}
+                  onChange={(e) => setRoundDuration(Number(e.target.value))}
+                  className={`w-full border rounded-xl px-2 py-3 transition-all font-bold focus:outline-none focus:ring-1 focus:ring-indigo-500 text-sm ${
+                    isDarkMode 
+                      ? 'bg-slate-900/50 border-slate-700/50 text-slate-200 focus:border-indigo-500 focus:bg-slate-900' 
+                      : 'bg-slate-100 border-slate-300 text-slate-800 focus:border-indigo-500 focus:bg-white'
+                  }`}
+                >
+                  <option value={10}>10s</option>
+                  <option value={20}>20s</option>
+                  <option value={30}>30s</option>
+                  <option value={40}>40s</option>
+                </select>
               </div>
             )}
 
