@@ -19,12 +19,12 @@ export default function AlphabetParticles({ isDarkMode, maxParticles = 26 }) {
       draggedParticle: null
     };
 
-    const handleMouseDown = (e) => {
+    const handleStart = (clientX, clientY, target, preventDefaultFunc) => {
       // Only initiate drag if clicking empty background (body or div)
-      if (e.target.tagName !== 'BODY' && e.target.tagName !== 'DIV') return;
+      if (target.tagName !== 'BODY' && target.tagName !== 'DIV') return false;
       
-      mouse.x = e.clientX;
-      mouse.y = e.clientY;
+      mouse.x = clientX;
+      mouse.y = clientY;
       mouse.isDown = true;
       
       // Find particle (front to back)
@@ -39,23 +39,33 @@ export default function AlphabetParticles({ isDarkMode, maxParticles = 26 }) {
           particles.splice(i, 1);
           particles.push(p);
           
-          // Prevent browser text selection while throwing particles!
-          e.preventDefault();
-          break;
+          // Prevent default browser behavior if needed
+          if (preventDefaultFunc) preventDefaultFunc();
+          return true;
         }
+      }
+      return false;
+    };
+
+    const handleMove = (clientX, clientY, preventDefaultFunc) => {
+      mouse.x = clientX;
+      mouse.y = clientY;
+      if (mouse.draggedParticle && preventDefaultFunc) {
+        preventDefaultFunc();
       }
     };
 
+    const handleMouseDown = (e) => {
+      handleStart(e.clientX, e.clientY, e.target, () => e.preventDefault());
+    };
+
     const handleMouseMove = (e) => {
-      mouse.x = e.clientX;
-      mouse.y = e.clientY;
-      // Position is now handled smoothly inside the Particle's update loop
+      handleMove(e.clientX, e.clientY);
     };
 
     const handleMouseUp = () => {
       mouse.isDown = false;
       if (mouse.draggedParticle) {
-        // We don't reset speed here; the particle keeps its calculated momentum!
         mouse.draggedParticle = null;
       }
     };
@@ -63,6 +73,26 @@ export default function AlphabetParticles({ isDarkMode, maxParticles = 26 }) {
     const handleMouseOut = () => {
       mouse.x = null;
       mouse.y = null;
+      handleMouseUp();
+    };
+
+    const handleTouchStart = (e) => {
+      if (e.touches.length === 0) return;
+      const touch = e.touches[0];
+      handleStart(touch.clientX, touch.clientY, e.target, () => {
+        if (e.cancelable) e.preventDefault();
+      });
+    };
+
+    const handleTouchMove = (e) => {
+      if (e.touches.length === 0) return;
+      const touch = e.touches[0];
+      handleMove(touch.clientX, touch.clientY, () => {
+        if (e.cancelable) e.preventDefault();
+      });
+    };
+
+    const handleTouchEnd = () => {
       handleMouseUp();
     };
 
@@ -77,6 +107,10 @@ export default function AlphabetParticles({ isDarkMode, maxParticles = 26 }) {
     window.addEventListener('mousemove', handleMouseMove);
     window.addEventListener('mouseup', handleMouseUp);
     window.addEventListener('mouseout', handleMouseOut);
+    window.addEventListener('touchstart', handleTouchStart, { passive: false });
+    window.addEventListener('touchmove', handleTouchMove, { passive: false });
+    window.addEventListener('touchend', handleTouchEnd);
+    window.addEventListener('touchcancel', handleTouchEnd);
 
     const alphabets = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 
@@ -275,6 +309,10 @@ export default function AlphabetParticles({ isDarkMode, maxParticles = 26 }) {
       window.removeEventListener('mousemove', handleMouseMove);
       window.removeEventListener('mouseup', handleMouseUp);
       window.removeEventListener('mouseout', handleMouseOut);
+      window.removeEventListener('touchstart', handleTouchStart);
+      window.removeEventListener('touchmove', handleTouchMove);
+      window.removeEventListener('touchend', handleTouchEnd);
+      window.removeEventListener('touchcancel', handleTouchEnd);
       cancelAnimationFrame(animationFrameId);
     };
   }, [isDarkMode]);
