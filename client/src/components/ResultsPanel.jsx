@@ -1,9 +1,7 @@
-import React, { useState } from 'react';
-import { AlertTriangle, Award, ShieldAlert, User, Globe } from 'lucide-react';
-import PlaceExplorerModal from './PlaceExplorerModal';
+import React from 'react';
+import { AlertTriangle, Award, ShieldAlert, User } from 'lucide-react';
 
 export default function ResultsPanel({ answers, scores, myPlayerId, onRaiseChallenge, activeChallenges }) {
-  const [selectedPlace, setSelectedPlace] = useState(null);
   const categories = ['name', 'place', 'animal', 'thing'];
 
   const getPointsColor = (pts) => {
@@ -135,16 +133,6 @@ export default function ResultsPanel({ answers, scores, myPlayerId, onRaiseChall
                                 <Award size={10} /> Unique
                               </span>
                             )}
-
-                            {cat === 'place' && playerAns.trim() && (
-                              <button
-                                onClick={() => setSelectedPlace(playerAns)}
-                                className="text-[10px] text-indigo-400 hover:text-indigo-300 font-semibold hover:underline flex items-center gap-0.5 active:scale-95 transition-all"
-                                title="Explore Google Map & details"
-                              >
-                                <Globe size={10} /> Map
-                              </button>
-                            )}
                           </div>
                         </div>
                       </td>
@@ -164,13 +152,6 @@ export default function ResultsPanel({ answers, scores, myPlayerId, onRaiseChall
           </tbody>
         </table>
       </div>
-      
-      {selectedPlace && (
-        <PlaceExplorerModal 
-          place={selectedPlace} 
-          onClose={() => setSelectedPlace(null)} 
-        />
-      )}
     </div>
   );
 }
