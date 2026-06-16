@@ -59,7 +59,7 @@ export default function Leaderboard({ leaderboard, onGoHome, myPlayerId, isHost,
         )}
 
         {/* Full Ranks */}
-        <ScoreBoard leaderboard={leaderboard} />
+        <ScoreBoard leaderboard={leaderboard} myPlayerId={myPlayerId} />
 
         {/* Actions */}
         <div className="flex flex-wrap justify-center gap-4 pt-2">

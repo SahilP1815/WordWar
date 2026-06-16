@@ -3,7 +3,7 @@ import { Users, Shield, RefreshCw, Copy, Check } from 'lucide-react';
 import { useState } from 'react';
 import AlphabetParticles from '../components/AlphabetParticles';
 
-export default function WaitingRoom({ roomId, players, maxRounds, isConnecting = false }) {
+export default function WaitingRoom({ roomId, players, maxRounds, isConnecting = false, myPlayerId }) {
   const [copied, setCopied] = useState(false);
 
   const handleCopy = () => {
@@ -87,19 +87,33 @@ export default function WaitingRoom({ roomId, players, maxRounds, isConnecting =
                   <span className="text-slate-500 text-sm italic">No players yet...</span>
                 </div>
               ) : (
-                players.map((p) => (
-                  <div
-                    key={p.playerId}
-                    className="p-3.5 rounded-xl bg-slate-900/40 border border-slate-800/60 flex items-center justify-between"
-                  >
-                    <span className="font-semibold text-slate-200 text-sm">{p.playerName}</span>
-                    {p.isHost && (
-                      <span className="text-[9px] font-black text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded-full border border-amber-500/20 flex items-center gap-1 uppercase tracking-wider">
-                        <Shield size={8} /> Host
+                players.map((p) => {
+                  const isMe = p.playerId === myPlayerId;
+                  return (
+                    <div
+                      key={p.playerId}
+                      className={`p-3.5 rounded-xl flex items-center justify-between transition-all ${
+                        isMe
+                          ? 'bg-indigo-500/10 border-2 border-indigo-500/50 shadow-[0_0_15px_rgba(99,102,241,0.15)]'
+                          : 'bg-slate-900/40 border border-slate-800/60'
+                      }`}
+                    >
+                      <span className="font-semibold text-slate-200 text-sm flex items-center gap-2">
+                        {p.playerName}
+                        {isMe && (
+                          <span className="text-[9px] font-extrabold bg-indigo-500/20 text-indigo-400 px-1.5 py-0.5 rounded uppercase tracking-wider">
+                            You
+                          </span>
+                        )}
                       </span>
-                    )}
-                  </div>
-                ))
+                      {p.isHost && (
+                        <span className="text-[9px] font-black text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded-full border border-amber-500/20 flex items-center gap-1 uppercase tracking-wider">
+                          <Shield size={8} /> Host
+                        </span>
+                      )}
+                    </div>
+                  );
+                })
               )}
             </div>
           </div>

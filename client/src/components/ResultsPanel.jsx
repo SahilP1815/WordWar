@@ -60,8 +60,10 @@ export default function ResultsPanel({ answers, scores, myPlayerId, onRaiseChall
               return (
                 <tr 
                   key={pid} 
-                  className={`transition-colors duration-200 hover:bg-slate-900/20 ${
-                    isMe ? 'bg-indigo-950/10' : ''
+                  className={`transition-all duration-200 ${
+                    isMe 
+                      ? 'bg-indigo-500/15 border-y border-indigo-500/30 shadow-[inset_4px_0_0_#6366f1]' 
+                      : 'hover:bg-slate-900/20'
                   }`}
                 >
                   {/* Rank Badge */}

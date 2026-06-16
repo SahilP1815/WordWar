@@ -418,6 +418,7 @@ function App() {
           players={[]}
           maxRounds={maxRounds}
           isConnecting={true}
+          myPlayerId={playerId}
         />
       )}
 
@@ -431,12 +432,14 @@ function App() {
             onKickPlayer={handleKickPlayer}
             playerLimit={playerLimit}
             maxRounds={maxRounds}
+            myPlayerId={playerId}
           />
         ) : (
           <WaitingRoom
             roomId={roomId}
             players={players}
             maxRounds={maxRounds}
+            myPlayerId={playerId}
           />
         )
       )}

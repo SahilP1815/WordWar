@@ -3,7 +3,7 @@ import { Users, Shield, ArrowRight, Copy, Check, UserMinus } from 'lucide-react'
 import { useState } from 'react';
 import AlphabetParticles from '../components/AlphabetParticles';
 
-export default function Lobby({ roomId, players, isHost, onStartGame, playerLimit = 10, maxRounds = 15 }) {
+export default function Lobby({ roomId, players, isHost, onStartGame, playerLimit = 10, maxRounds = 15, myPlayerId }) {
   const [copied, setCopied] = useState(false);
 
   const handleCopy = () => {
@@ -93,29 +93,43 @@ export default function Lobby({ roomId, players, isHost, onStartGame, playerLimi
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3 max-h-[240px] overflow-y-auto pr-1">
-              {players.map((p) => (
-                <div
-                  key={p.playerId}
-                  className="p-4 rounded-xl bg-slate-900/40 border border-slate-800/80 flex items-center justify-between"
-                >
-                  <span className="font-bold text-slate-200">{p.playerName}</span>
-                  {p.isHost ? (
-                    <span className="text-[10px] font-extrabold text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded-full border border-amber-500/20 flex items-center gap-1">
-                      <Shield size={10} /> Host
+              {players.map((p) => {
+                const isMe = p.playerId === myPlayerId;
+                return (
+                  <div
+                    key={p.playerId}
+                    className={`p-4 rounded-xl flex items-center justify-between transition-all ${
+                      isMe
+                        ? 'bg-indigo-500/10 border-2 border-indigo-500/50 shadow-[0_0_15px_rgba(99,102,241,0.15)]'
+                        : 'bg-slate-900/40 border border-slate-800/80'
+                    }`}
+                  >
+                    <span className="font-bold text-slate-200 flex items-center gap-2">
+                      {p.playerName}
+                      {isMe && (
+                        <span className="text-[9px] font-extrabold bg-indigo-500/20 text-indigo-400 px-1.5 py-0.5 rounded uppercase tracking-wider">
+                          You
+                        </span>
+                      )}
                     </span>
-                  ) : (
-                    isHost && (
-                      <button
-                        onClick={() => onKickPlayer(p.playerId)}
-                        className="text-slate-500 hover:text-rose-500 transition-colors bg-slate-900 hover:bg-rose-500/10 p-1.5 rounded-lg border border-transparent hover:border-rose-500/30"
-                        title="Kick Player"
-                      >
-                        <UserMinus size={14} />
-                      </button>
-                    )
-                  )}
-                </div>
-              ))}
+                    {p.isHost ? (
+                      <span className="text-[10px] font-extrabold text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded-full border border-amber-500/20 flex items-center gap-1">
+                        <Shield size={10} /> Host
+                      </span>
+                    ) : (
+                      isHost && (
+                        <button
+                          onClick={() => onKickPlayer(p.playerId)}
+                          className="text-slate-500 hover:text-rose-500 transition-colors bg-slate-900 hover:bg-rose-500/10 p-1.5 rounded-lg border border-transparent hover:border-rose-500/30"
+                          title="Kick Player"
+                        >
+                          <UserMinus size={14} />
+                        </button>
+                      )
+                    )}
+                  </div>
+                );
+              })}
             </div>
           </div>
 
