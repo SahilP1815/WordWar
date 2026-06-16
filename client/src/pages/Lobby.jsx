@@ -120,10 +120,10 @@ export default function Lobby({ roomId, players, isHost, onStartGame, playerLimi
                       isHost && (
                         <button
                           onClick={() => onKickPlayer(p.playerId)}
-                          className="text-slate-500 hover:text-rose-500 transition-colors bg-slate-900 hover:bg-rose-500/10 p-1.5 rounded-lg border border-transparent hover:border-rose-500/30"
+                          className="text-rose-400 hover:text-rose-350 bg-rose-500/10 hover:bg-rose-500/20 p-2.5 rounded-xl border border-rose-500/20 active:scale-95 transition-all flex items-center justify-center animate-in fade-in duration-200"
                           title="Kick Player"
                         >
-                          <UserMinus size={14} />
+                          <UserMinus size={18} />
                         </button>
                       )
                     )}

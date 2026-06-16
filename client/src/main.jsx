@@ -261,6 +261,7 @@ function App() {
         setRoomId('');
         setPlayerId('');
         setPlayers([]);
+        setJoiningData(null);
         break;
 
       default:
@@ -313,6 +314,7 @@ function App() {
     setActiveChallenges([]);
     setLeaderboard([]);
     setRoundHistory([]);
+    setJoiningData(null);
   };
 
   return (
@@ -401,7 +403,7 @@ function App() {
 
       </div>
 
-      {phase === 'HOME' && (
+      {phase === 'HOME' && !joiningData && (
         <Home
           onCreateRoom={handleCreateRoom}
           onJoinRoom={handleJoinRoom}
