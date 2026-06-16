@@ -256,6 +256,7 @@ function App() {
         break;
 
       case 'room:kicked':
+        alert('You have been kicked by the host.');
         setLocalErr('You have been kicked by the host.');
         setPhase('HOME');
         setRoomId('');

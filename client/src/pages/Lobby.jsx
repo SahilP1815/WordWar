@@ -3,7 +3,7 @@ import { Users, Shield, ArrowRight, Copy, Check, UserMinus } from 'lucide-react'
 import { useState } from 'react';
 import AlphabetParticles from '../components/AlphabetParticles';
 
-export default function Lobby({ roomId, players, isHost, onStartGame, playerLimit = 10, maxRounds = 15, myPlayerId }) {
+export default function Lobby({ roomId, players, isHost, onStartGame, onKickPlayer, playerLimit = 10, maxRounds = 15, myPlayerId }) {
   const [copied, setCopied] = useState(false);
 
   const handleCopy = () => {
