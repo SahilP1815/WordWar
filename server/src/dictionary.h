@@ -126,10 +126,7 @@ inline bool isValid(const std::string& cat, const std::string& val) {
     } else if (cat == "animal") {
         return animals.count(lowerVal) > 0;
     } else if (cat == "thing") {
-        return things.count(lowerVal) > 0 && 
-               names.count(lowerVal) == 0 && 
-               places.count(lowerVal) == 0 && 
-               animals.count(lowerVal) == 0;
+        return things.count(lowerVal) > 0;
     }
     return false;
 }
