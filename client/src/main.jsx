@@ -78,9 +78,13 @@ function App() {
   // Local errors
   const [localErr, setLocalErr] = useState('');
 
+  const lastProcessedMessageRef = useRef(null);
+
   // Handle server events
   useEffect(() => {
     if (!lastMessage) return;
+    if (lastProcessedMessageRef.current === lastMessage) return;
+    lastProcessedMessageRef.current = lastMessage;
 
     console.log('Received socket event:', lastMessage);
     const { type } = lastMessage;

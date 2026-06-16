@@ -68,13 +68,11 @@ body::after {
   font-weight: 900 !important;
   letter-spacing: 1px;
 }
-@media (hover: hover) {
-  .btn-gaming:hover {
-    transform: translate(-2px, -2px);
-    box-shadow: 8px 8px 0px #000000 !important;
-    background: #ff3b30 !important; /* Comic Red */
-    color: #ffffff !important;
-  }
+.btn-gaming:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 8px 8px 0px #000000 !important;
+  background: #ff3b30 !important; /* Comic Red */
+  color: #ffffff !important;
 }
 .btn-gaming:active {
   transform: translate(6px, 6px);
@@ -91,23 +89,21 @@ body::after {
   border-radius: 8px !important;
   font-weight: 900 !important;
 }
-@media (hover: hover) {
-  .btn-gaming-secondary:hover {
-    transform: translate(-2px, -2px);
-    box-shadow: 6px 6px 0px #000000 !important;
-    background: #00c3ff !important; /* Comic Cyan */
-  }
-  .btn-gaming-danger:hover {
-    transform: translate(-2px, -2px);
-    box-shadow: 6px 6px 0px #000000 !important;
-    background: #ff3b30 !important;
-    color: white !important;
-  }
-  .btn-gaming-success:hover {
-    transform: translate(-2px, -2px);
-    box-shadow: 6px 6px 0px #000000 !important;
-    background: #00ff66 !important;
-  }
+.btn-gaming-secondary:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px #000000 !important;
+  background: #00c3ff !important; /* Comic Cyan */
+}
+.btn-gaming-danger:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px #000000 !important;
+  background: #ff3b30 !important;
+  color: white !important;
+}
+.btn-gaming-success:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px #000000 !important;
+  background: #00ff66 !important;
 }
 .btn-gaming-secondary:active, .btn-gaming-danger:active, .btn-gaming-success:active {
   transform: translate(4px, 4px);
@@ -123,14 +119,12 @@ body::after {
     0 12px 24px rgba(16, 185, 129, 0.3),
     inset 0 1px 0 rgba(255, 255, 255, 0.3);
 }
-@media (hover: hover) {
-  .btn-gaming-success:hover {
-    transform: translateY(-2px);
-    box-shadow: 
-      0 8px 0 #047857, 
-      0 16px 28px rgba(16, 185, 129, 0.35),
-      inset 0 1px 0 rgba(255, 255, 255, 0.4);
-  }
+.btn-gaming-success:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 8px 0 #047857, 
+    0 16px 28px rgba(16, 185, 129, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
 }
 .btn-gaming-success:active {
   transform: translateY(6px);
@@ -159,12 +153,10 @@ body::after {
   color: #000000 !important;
 }
 
-@media (hover: hover) {
-  .glass-interactive:hover {
-    background: #fff8d6 !important; /* Slight yellow tint */
-    transform: translate(-4px, -4px);
-    box-shadow: 12px 12px 0px #000000 !important;
-  }
+.glass-interactive:hover {
+  background: #fff8d6 !important; /* Slight yellow tint */
+  transform: translate(-4px, -4px);
+  box-shadow: 12px 12px 0px #000000 !important;
 }
 
 /* Override all tailwind slate colors to pure black for the comic style */
@@ -296,12 +288,10 @@ body.light-mode .glass-interactive {
   border-color: rgba(15, 23, 42, 0.08) !important;
 }
 
-@media (hover: hover) {
-  body.light-mode .glass-interactive:hover {
-    background: rgba(255, 255, 255, 0.95) !important;
-    border-color: rgba(99, 102, 241, 0.4) !important;
-    box-shadow: 0 12px 30px rgba(99, 102, 241, 0.1) !important;
-  }
+body.light-mode .glass-interactive:hover {
+  background: rgba(255, 255, 255, 0.95) !important;
+  border-color: rgba(99, 102, 241, 0.4) !important;
+  box-shadow: 0 12px 30px rgba(99, 102, 241, 0.1) !important;
 }
 
 body.light-mode input,

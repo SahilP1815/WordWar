@@ -6,7 +6,24 @@ import { downloadFullResults } from '../utils/downloadResults';
 export default function Leaderboard({ leaderboard, onGoHome, myPlayerId, isHost, roomId, roundHistory = [] }) {
   const winner = leaderboard[0];
 
+  const hasPlayedAudioRef = React.useRef(false);
+  const audioRef = React.useRef(null);
+
+  React.useEffect(() => {
+    // Sound effects for winner and loser are removed for now
+  }, [leaderboard, myPlayerId, isHost]);
+
+  // Stop audio immediately and navigate home
   const handleGoHome = () => {
+    try {
+      if (audioRef.current) {
+        audioRef.current.pause();
+        audioRef.current.src = '';
+        audioRef.current = null;
+      }
+    } catch (err) {
+      console.warn("Error stopping leaderboard audio:", err);
+    }
     onGoHome();
   };
 
