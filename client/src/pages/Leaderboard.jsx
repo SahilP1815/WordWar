@@ -6,60 +6,7 @@ import { downloadFullResults } from '../utils/downloadResults';
 export default function Leaderboard({ leaderboard, onGoHome, myPlayerId, isHost, roomId, roundHistory = [] }) {
   const winner = leaderboard[0];
 
-  const hasPlayedAudioRef = React.useRef(false);
-  const audioRef = React.useRef(null);
-
-  React.useEffect(() => {
-    if (isHost) return;
-    if (!leaderboard || leaderboard.length === 0) return;
-    if (hasPlayedAudioRef.current) return;
-
-    // Find current player's rank
-    const myEntry = leaderboard.find(p => p.playerId === myPlayerId);
-    if (!myEntry) return;
-
-    const myRank = myEntry.rank;
-    if (myRank > 3) return; // Only play sound for players ranking 3 or less
-
-    hasPlayedAudioRef.current = true;
-
-    const audioUrl = (myRank === 1 || myRank === 2)
-      ? 'https://www.myinstants.com/media/sounds/7-crore-kbc.mp3'
-      : 'https://www.myinstants.com/media/sounds/faaah.mp3';
-
-    const audio = new Audio(audioUrl);
-    audio.volume = 0.8;
-    audioRef.current = audio;
-
-    audio.play().catch(err => {
-      console.warn("Audio playback was blocked or failed:", err);
-    });
-
-    // Cleanup: stop audio if user navigates away before it finishes
-    return () => {
-      try {
-        if (audioRef.current) {
-          audioRef.current.pause();
-          audioRef.current.src = '';
-          audioRef.current = null;
-        }
-      } catch (err) {
-        console.warn("Error in audio cleanup:", err);
-      }
-    };
-  }, [leaderboard, myPlayerId, isHost]);
-
-  // Stop audio immediately and navigate home
   const handleGoHome = () => {
-    try {
-      if (audioRef.current) {
-        audioRef.current.pause();
-        audioRef.current.src = '';
-        audioRef.current = null;
-      }
-    } catch (err) {
-      console.warn("Error stopping leaderboard audio:", err);
-    }
     onGoHome();
   };
 
